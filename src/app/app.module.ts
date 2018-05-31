@@ -9,14 +9,16 @@ import { FIREBASE_CONFIG } from '../app.firebase.config';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { NewsRepositoryProvider } from '../providers/news-repository/news-repository';
 import { NewsPage } from '../pages/news/news';
 import { ProductsPage } from '../pages/products/products';
 import { ApplicationsPage } from '../pages/applications/applications';
 import { ContactPage } from '../pages/contact/contact';
+
+import { NewsRepositoryProvider } from '../providers/news-repository/news-repository';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { ContactPage } from '../pages/contact/contact';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
 		AngularFireAuthModule,
-		AngularFireDatabaseModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -24,7 +24,7 @@ export class NewsPage {
 
   ionViewDidLoad() {
     this.newsList = this.newsRepo.getPagedNews(0,10).valueChanges();
-    console.log(this.newsList);
+    this.newsList.forEach(n => console.log(n));
   }
 
 }
