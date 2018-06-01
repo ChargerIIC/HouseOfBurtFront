@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NewsRepositoryProvider } from '../../providers/news-repository/news-repository';
 import { Observable } from 'rxjs';
+import { NewsItem } from '../../model/newsItem.model';
 
 /**
  * Generated class for the NewsPage page.
@@ -17,7 +18,7 @@ import { Observable } from 'rxjs';
 })
 export class NewsPage {
 
-  public newsList : Observable<any>;
+  public newsList : Observable<NewsItem[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private newsRepo: NewsRepositoryProvider) {
   }
@@ -27,4 +28,8 @@ export class NewsPage {
     this.newsList.forEach(n => console.log(n));
   }
 
+  convertDate(timestamp){
+    console.log(timestamp);
+    return new Date(timestamp.seconds * 1000);
+  }
 }

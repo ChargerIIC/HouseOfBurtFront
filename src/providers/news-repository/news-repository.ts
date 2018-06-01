@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { NewsItem } from '../../model/newsItem.model';
 
 /*
   Generated class for the NewsRepositoryProvider provider.
@@ -11,11 +11,11 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 @Injectable()
 export class NewsRepositoryProvider {
 
-  constructor(private firebase: AngularFireDatabase, private fireStore: AngularFirestore ) {
+  constructor(private fireStore: AngularFirestore ) {
   }
 
   	///Gets a news article starting at a certain index and then so many forward
-	public getPagedNews(start: number, count: number): AngularFirestoreCollection<any> {
+	public getPagedNews(start: number, count: number): AngularFirestoreCollection<NewsItem> {
     return this.fireStore.collection('/News/');
 	}
 

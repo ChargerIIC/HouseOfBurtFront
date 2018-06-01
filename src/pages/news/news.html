@@ -12,6 +12,10 @@
 
 <ion-content padding>
   <ion-list *ngFor="let item of this.newsList | async">
-    <ion-item>{{ item | json }}</ion-item>
+    <ion-item>
+      <h2>{{item.Title}}</h2>
+      <p>{{convertDate(item.Date) | date:short}}</p>
+      <p>{{item.Content}}</p>
+    </ion-item>
   </ion-list>
 </ion-content>
