@@ -22,4 +22,12 @@ export class BlogListComponent {
     return new Date(timestamp.seconds * 1000);
   }
 
+  summarizeContent(content: string, sliceAmount: number){
+    var offSet = content.indexOf(" ",sliceAmount);
+    if(offSet < 0){
+      return content;
+    }
+
+    return content.slice(0, offSet);
+  }
 }
