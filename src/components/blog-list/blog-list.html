@@ -2,5 +2,10 @@
     <h2>{{entry.Title}}</h2>
     <em>{{convertDate(entry.Date) | date:short}}</em>
     <br>
-    <div [innerHTML]="entry.Content"></div>      
+    <div class="contentSummary" [innerHTML]="entry.Content.slice(0,600)">
+    </div>   
+    <button ion-button icon-end class="readMore">
+        Read More
+        <ion-icon name="exit"></ion-icon>
+    </button>  
 </ion-item>
