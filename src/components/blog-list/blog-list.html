@@ -1,0 +1,6 @@
+<ion-item>
+    <h2>{{entry.Title}}</h2>
+    <em>{{convertDate(entry.Date) | date:short}}</em>
+    <br>
+    <div [innerHTML]="entry.Content"></div>      
+</ion-item>

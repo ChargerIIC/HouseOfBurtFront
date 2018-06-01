@@ -19,6 +19,7 @@ import { NewsRepositoryProvider } from '../providers/news-repository/news-reposi
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
 		AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

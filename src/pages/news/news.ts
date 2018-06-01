@@ -25,11 +25,11 @@ export class NewsPage {
 
   ionViewDidLoad() {
     this.newsList = this.newsRepo.getPagedNews(0,10).valueChanges();
-    this.newsList.forEach(n => console.log(n));
+    //this.newsList.forEach(n => console.log(n));
   }
 
-  convertDate(timestamp){
-    console.log(timestamp);
-    return new Date(timestamp.seconds * 1000);
-  }
+  // convertDate(timestamp){
+  //   console.log(timestamp);
+  //   return new Date(timestamp.seconds * 1000);
+  // }
 }
