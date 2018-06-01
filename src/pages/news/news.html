@@ -15,7 +15,8 @@
     <ion-item>
       <h2>{{item.Title}}</h2>
       <p>{{convertDate(item.Date) | date:short}}</p>
-      <p>{{item.Content}}</p>
+      <br>
+      <div [innerHTML]="item.Content"></div>      
     </ion-item>
   </ion-list>
 </ion-content>
