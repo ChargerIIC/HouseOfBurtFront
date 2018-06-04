@@ -20,6 +20,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { ComponentsModule } from '../components/components.module';
+import { NewsArticlePage } from '../pages/news-article/news-article';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ComponentsModule } from '../components/components.module';
     NewsPage,
     ProductsPage,
     ApplicationsPage,
-    ContactPage
+    ContactPage,
+    NewsArticlePage
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,7 @@ import { ComponentsModule } from '../components/components.module';
     MyApp,
     HomePage,
     NewsPage,
+    NewsArticlePage,
   ],
   providers: [
     StatusBar,

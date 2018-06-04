@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NewsItem } from '../../model/newsItem.model';
+import { NavController } from 'ionic-angular';
+import { NewsArticlePage } from '../../pages/news-article/news-article';
 
 /**
  * Generated class for the BlogListComponent component.
@@ -15,7 +17,7 @@ export class BlogListComponent {
 
   @Input() entry : NewsItem;
 
-  constructor() {
+  constructor(public navCtlr: NavController) {
   }
 
   convertDate(timestamp){
@@ -29,5 +31,11 @@ export class BlogListComponent {
     }
 
     return content.slice(0, offSet);
+  }
+
+  navigateToFullArticle(){
+    this.navCtlr.push(NewsArticlePage, {
+      article: this.entry,
+    });
   }
 }
