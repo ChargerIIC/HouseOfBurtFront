@@ -16,7 +16,7 @@ export class NewsRepositoryProvider {
 
   	///Gets a news article starting at a certain index and then so many forward
 	public getPagedNews(start: number, count: number): AngularFirestoreCollection<NewsItem> {
-    return this.fireStore.collection('/News/');
+    return this.fireStore.collection('/News/', i => i.orderBy('Date', 'desc'));
 	}
 
 }
