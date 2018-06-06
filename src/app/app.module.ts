@@ -47,6 +47,9 @@ import { NewsArticlePage } from '../pages/news-article/news-article';
     HomePage,
     NewsPage,
     NewsArticlePage,
+    ProductsPage,
+    ApplicationsPage,
+    ContactPage
   ],
   providers: [
     StatusBar,
