@@ -4,13 +4,6 @@ import { NewsRepositoryProvider } from '../../providers/news-repository/news-rep
 import { Observable } from 'rxjs';
 import { NewsItem } from '../../model/newsItem.model';
 
-/**
- * Generated class for the NewsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-news',

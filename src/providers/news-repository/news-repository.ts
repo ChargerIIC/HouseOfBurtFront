@@ -11,7 +11,7 @@ import { NewsItem } from '../../model/newsItem.model';
 @Injectable()
 export class NewsRepositoryProvider {
 
-  constructor(private fireStore: AngularFirestore ) {
+  constructor(private fireStore: AngularFirestore) {
   }
 
   	///Gets a news article starting at a certain index and then so many forward

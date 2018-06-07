@@ -1,0 +1,11 @@
+<ion-item>
+  <h3>{{product.Name}}</h3>
+  <br>
+      <ion-img src={{product.ImageUrl}} width=80%></ion-img>
+  <p>{{product.Description}}</p>
+  <br>
+  <button ion-button icon-end class="readMore" (click)="navigateToFullProduct()">
+    Read More
+    <ion-icon name="exit"></ion-icon>
+</button>  
+</ion-item>
