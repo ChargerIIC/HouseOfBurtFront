@@ -1,4 +1,5 @@
 import { Version } from "./version.model";
+import { DocumentReference } from "angularfire2/firestore";
 
 export class Product{
     public Id: number; //arbitary id for sort order
@@ -7,9 +8,12 @@ export class Product{
 
     public Description: string;
 
-    public Versions: Version[];
-
     public ImageUrl: string;
 
     public SourceUrl: string;
+
+    public DocumentRef : DocumentReference;
+
+    public DocumentId: string;
+
 }
