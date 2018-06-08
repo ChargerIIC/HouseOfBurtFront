@@ -12,6 +12,8 @@ export class Product{
 
     public SourceUrl: string;
 
+    public DownloadUrl: string;
+
     public DocumentRef : DocumentReference;
 
     public DocumentId: string;

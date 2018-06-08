@@ -18,11 +18,17 @@
     <br>
   <div [innerHTML]="this.product.Description"></div>
     <br>
-  <a href="this.product.DownloadUrl">Download Link</a>
+  <a *ngIf="this.product.DownloadUrl" href="{{this.product.DownloadUrl}}">Download Link</a>
     <br>
-  <a href="this.product.SourceUrl">Source Link</a>
+  <a *ngIf="this.product.SourceUrl" href="{{this.product.SourceUrl}}">Source Link</a>
     <br>
   <ion-list *ngFor="let item of this.versions | async">
-    {{item.VersionNumber}}
+    <ion-item>
+      <strong>{{item.VersionNumber}}</strong>
+      <ul *ngFor="let s of item.ReleaseNotes">
+        <li>{{s}}</li>
+      </ul>
+    </ion-item>
+   
   </ion-list>
 </ion-content>

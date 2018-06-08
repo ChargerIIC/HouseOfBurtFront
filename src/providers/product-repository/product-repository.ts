@@ -15,7 +15,7 @@ export class ProductRepositoryProvider {
   }
   
   public getVersionsForProduct(product: Product) : AngularFirestoreCollection<Version>{
-    return this.fireStore.collection(product.DocumentRef.collection('/Versions/'));
+    return this.fireStore.collection(product.DocumentRef.collection('/Versions/'), v => v.orderBy('ReleaseId', 'desc'));
   }
 
 }

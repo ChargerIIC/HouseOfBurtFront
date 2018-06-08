@@ -4,7 +4,5 @@ export class Version{
 
     public VersionNumber : string;
 
-    public DownloadLink : string
-
-    public  ReleaseNotes : string;
+    public  ReleaseNotes : string[];
 }
