@@ -39,19 +39,17 @@ const mailTransport = nodemailer.createTransport({
 });
 
 exports.sendEmailContact = functions.https.onRequest((request, response) =>{
-    let emailTo = request.email;
-    let content = request.content;
 
     const mailOptions = {
-        from: emailTo,
+        from: request.email,
         to: 'HouseOfBurtSoftware@Yahoo.com',
         subject: "Contact Request from HouseOfBurt",
-        text: content
+        text: request.content
       };
 
       return mailTransport.sendMail(mailOptions)
     .then(() => console.log(`New contact email sent from:`,
-        emailTo))
+    request.email))
     .catch((error) => console.error('There was an error while sending the email:', error));
 });
 
