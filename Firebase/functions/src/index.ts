@@ -23,7 +23,7 @@ import { MailConfig } from './mail.config';
  * limitations under the License.
  */
 'use strict';
-import('./mail.config');
+
 const functions = require('firebase-functions');
 const nodemailer = require('nodemailer');
 // Configure the email transport using the default SMTP transport and a GMail account.
@@ -39,32 +39,20 @@ const mailTransport = nodemailer.createTransport({
   },
 });
 
-exports.sendEmailContact = function.database.ref()
+exports.sendEmailContact = functions.https.onRequest((request, response) =>{
+    let emailTo = request.email;
+    let content = request.content;
 
-// Sends an email confirmation when a user changes his mailing list subscription.
-exports.sendEmailConfirmation = functions.database.ref('/users/{uid}').onWrite((change) => {
-  const snapshot = change.after;
-  const val = snapshot.val();
+    const mailOptions = {
+        from: emailTo,
+        to: 'HouseOfBurtSoftware@Yahoo.com',
+        subject: "Contact Request from HouseOfBurt",
+        text: content
+      };
 
-  if (!snapshot.changed('subscribedToMailingList')) {
-    return null;
-  }
-
-  const mailOptions = {
-    from: '"Spammy Corp." <noreply@firebase.com>',
-    to: val.email,
-  };
-
-  const subscribed = val.subscribedToMailingList;
-
-  // Building Email message.
-  mailOptions.subject = subscribed ? 'Thanks and Welcome!' : 'Sad to see you go :`(';
-  mailOptions.text = subscribed ?
-      'Thanks you for subscribing to our newsletter. You will receive our next weekly newsletter.' :
-      'I hereby confirm that I will stop sending you the newsletter.';
-
-  return mailTransport.sendMail(mailOptions)
-    .then(() => console.log(`New ${subscribed ? '' : 'un'}subscription confirmation email sent to:`,
-        val.email))
+      return mailTransport.sendMail(mailOptions)
+    .then(() => console.log(`New contact email sent from:`,
+        emailTo))
     .catch((error) => console.error('There was an error while sending the email:', error));
 });
+
