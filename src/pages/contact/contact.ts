@@ -21,7 +21,8 @@ export class ContactPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private fb:FormBuilder, private alertCtrl: AlertController, public http:HttpClient) {
     this.registerForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]]
+      email: ['', [Validators.required, Validators.email]],
+      content: ['',[Validators.required]]
     },{});
   }
 
@@ -30,12 +31,11 @@ export class ContactPage {
 
   onSubmit(){
     this.isSubmitted = true;
-    console.log('onSubmit');
     console.log(this.registerForm.value);
     if ((this.registerForm.valid) && (this.registerForm.value.email)) {
       var body = {
         email: this.registerForm.value.email,
-        content: this.registerForm.value.content
+        content: this.registerForm.value.emailMessage
       };
       this.http.post('https://us-central1-houseofburt-f4b61.cloudfunctions.net/sendEmailContact', body);      
     }
