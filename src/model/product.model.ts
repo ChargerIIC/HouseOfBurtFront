@@ -1,4 +1,3 @@
-import { Version } from "./version.model";
 import { DocumentReference } from "angularfire2/firestore";
 
 export class Product{
