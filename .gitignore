@@ -34,3 +34,4 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 src/app.firebase.config.ts
+Firebase/functions/src/mail.config.ts
