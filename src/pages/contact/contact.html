@@ -1,9 +1,3 @@
-<!--
-  Generated template for the ContactPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar color="primary">
@@ -17,5 +11,28 @@
 
 
 <ion-content padding>
+  <p class="center">
+    <img src="../../assets/imgs/Logo.png" width=50% height=50%>
+  </p> 
+  <form [formGroup]="registerForm" (ngSubmit)="this.onSubmit()" novalidate>
+  <ion-list>
 
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="email" formControlName="email"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label floating>Content</ion-label>
+    <ion-textarea rows="10" class="contentInput" type="text"></ion-textarea>
+  </ion-item>
+      
+  <ion-item text-wrap class="error">
+    <div *ngIf="registerForm.controls['email'].dirty && registerForm.controls['email'].invalid">
+    Email is incorrect.
+    </div>
+  </ion-item>
+  </ion-list>
+    <button ion-button full type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
 </ion-content>
