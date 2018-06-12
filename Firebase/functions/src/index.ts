@@ -1,4 +1,3 @@
-import * as functions from 'firebase-functions';
 import { MailConfig } from './mail.config';
 
 // // Start writing Firebase Functions
