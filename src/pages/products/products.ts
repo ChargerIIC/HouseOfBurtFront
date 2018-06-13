@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ProductRepositoryProvider } from '../../providers/product-repository/product-repository';
 import { Product } from '../../model/product.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-
-@IonicPage()
 @Component({
   selector: 'page-products',
   templateUrl: 'products.html',
