@@ -1,8 +1,8 @@
 {
   "name": "HouseOfBurt",
-  "app_id": "a4578164",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "pro_id": "a4578164"
 }

@@ -1,19 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NewsItem } from '../../model/newsItem.model';
 import { NavController } from 'ionic-angular';
 import { NewsArticlePage } from '../../pages/news-article/news-article';
 
-/**
- * Generated class for the BlogListComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
-  selector: 'blog-list',
-  templateUrl: 'blog-list.html'
+  selector: 'app-blog-summary',
+  templateUrl: './blog-summary.component.html',
+  styleUrls: ['./blog-summary.component.css']
 })
-export class BlogListComponent {
+export class BlogSummaryComponent {
 
   @Input() entry : NewsItem;
 
@@ -38,4 +33,5 @@ export class BlogListComponent {
       article: this.entry,
     });
   }
+
 }

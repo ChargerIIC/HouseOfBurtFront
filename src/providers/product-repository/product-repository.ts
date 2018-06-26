@@ -3,13 +3,15 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 import { Product } from '../../model/product.model';
 import { Version } from '../../model/version.model';
 
-@Injectable()
-export class ProductRepositoryProvider {
+@Injectable({
+  providedIn: 'root'
+})
+export class ProductRepositoryService {
 
   constructor(private fireStore: AngularFirestore) {
   }
 
-  ///Gets a full list of the tracked products
+    ///Gets a full list of the tracked products
 	public getListOfProducts(): AngularFirestoreCollection<Product> {    
     return this.fireStore.collection('/Products/', i => i.orderBy('Title'));
   }

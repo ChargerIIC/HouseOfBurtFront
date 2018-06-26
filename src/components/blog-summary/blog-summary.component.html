@@ -1,0 +1,11 @@
+<ion-item>
+  <h2><strong>{{entry.Title}}</strong></h2>
+  <em class="timestamp">{{convertDate(entry.Date) | date:short}}</em>
+  <br>
+  <div class="contentSummary" [innerHTML]="summarizeContent(entry.Content, 400)">
+  </div>   
+  <button ion-button icon-end class="readMore" (click)="navigateToFullArticle()">
+      Read More
+      <ion-icon name="exit"></ion-icon>
+  </button>  
+</ion-item>
