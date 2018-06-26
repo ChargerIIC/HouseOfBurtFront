@@ -11,12 +11,13 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from '../components/components.module';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { BlogSummaryComponent } from '../components/blog-summary/blog-summary.component';
 import { ProductSummaryComponent } from '../components/product-summary/product-summary';
-//import { ComponentsModule } from './components/components.module';
+
 //import { BlogSummaryComponent } from './blog-summary/blog-summary.component';
 //import { ProductSummaryComponent } from './product-summary/product-summary.component';
 

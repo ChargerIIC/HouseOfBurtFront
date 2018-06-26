@@ -1,6 +1,6 @@
 {
   "name": "HouseOfBurt",
-  "type": "ionic-angular",
+  "type": "angular",
   "integrations": {
     "cordova": {}
   },
