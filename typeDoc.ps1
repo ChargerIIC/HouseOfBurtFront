@@ -1,0 +1,1 @@
+﻿typedoc --out .\docs\ --name 'House Of Burt' --exclude './node_modules/*'

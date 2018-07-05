@@ -37,3 +37,6 @@ src/app.firebase.config.ts
 Firebase/functions/src/mail.config.ts
 Firebase/functions/lib/*.js
 Firebase/functions/lib/*.js.map
+
+### TypeDoc Generation ###
+docs/*
