@@ -25,6 +25,9 @@ import { NewsArticlePage } from '../pages/news-article/news-article';
 import { ProductRepositoryProvider } from '../providers/product-repository/product-repository';
 import { ProductDetailPage } from '../pages/product-detail/product-detail';
 
+/**
+ * Application Module that provides access to all the application components. Root module.
+ */
 @NgModule({
   declarations: [
     MyApp,

@@ -12,6 +12,9 @@ import { ContactPage } from '../pages/contact/contact';
 @Component({
   templateUrl: 'app.html'
 })
+/**
+ * MyApp class represents the application itself and handles intrapage navigation
+ */
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
@@ -19,6 +22,12 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
+   /**
+   * creates a new instance of the application
+   * @param platform  DI Loaded Ionic construct that provides access to native controls.
+   * @param statusBar  DI Loaded Ionic construct that provides access to the Native Status Bar
+   * @param splashScreen  DI Loaded Ionic construct that provides access to the Splash Screen
+   */
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
@@ -34,6 +43,10 @@ export class MyApp {
 
   }
 
+   /**
+   * Starts the application
+   * @returns void
+   */
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -43,6 +56,11 @@ export class MyApp {
     });
   }
 
+  /**
+   * Navigates to new page as per navigation
+   * @param page  Page DTO contiaing component to navigate to.
+   * @returns void
+   */
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario

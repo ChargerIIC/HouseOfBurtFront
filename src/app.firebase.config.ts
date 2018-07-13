@@ -1,3 +1,6 @@
+/**
+ * Config Settings for Firebase Instance.
+ */
 export const FIREBASE_CONFIG = // Initialize Firebase
 {
     apiKey: "AIzaSyBBF7JWhfjhHfnONP8RfJdHrxyAzHGo0Wc",
